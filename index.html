@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>The Lib</title>
+</head>
+<body>
+
+<div id="headerBlock">
+    <div class="container navbar">
+        <div class="innerHeader logo">
+            <ul class="menuLeft">
+                <li>TheLib</li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+        <div class="innerHeader navigation">
+            <ul class="menuRight">
+                <li><input type="text"></li>
+                <li><button id="searchBtn">Search</button></li>
+            </ul>
+        </div>
+    </div>
+</div> 
+
+<div id="bannerBlock">
+    <div class="container">
+        <h3>Welcome to The Lib</h3>
+        <hr>
+        <div id="form">
+            <div class="formElement">
+                <label class="infoHead">Book Name</label>
+                <input id="bookName" type="text" placeholder="Enter Book">
+            </div>
+            <div class="formElement">
+                <label class="infoHead">Author</label>
+                <input id="authorName" type="text" placeholder="Enter Author">
+            </div>
+
+            <div class="formElement">   
+                <label class="infoHead">Book Catagory</label>
+
+                <input type="radio" id="fiction" name="bookCatagory" value="fiction"></input>
+                <label class="radioHead">Fiction</label>
+                <input type="radio" id="non-fiction" name="bookCatagory" value="non-fiction"></input>
+                <label class="radioHead">Non Fiction</label>
+                <input type="radio" id="tech" name="bookCatagory" value="tech"></input>
+                <label class="radioHead">Tech</label>
+            </div>
+                <button id="addBtn">Add Book</button>
+        </div>
+        <div>
+            <h3>Your Books :</h3>
+            <table id="displayTable">
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Type</th>
+                </tr>
+            </table>
+            <p id="emptyDisplay">Nothing To Show Here! Add A Book First</p>
+        </div>
+    </div>
+</div>
+
+<div id="footerBlock">
+    <div class="container">
+        <div>&copy;2022</div>
+    </div>
+</div>
+
+</body>
+<script src="js/main.js"></script>
+</html>

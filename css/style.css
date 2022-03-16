@@ -1,0 +1,48 @@
+* {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    text-decoration:none;
+}
+
+.container {width:1170px;margin:0 auto;}
+#headerBlock {background-color:rgb(226, 133, 133);}
+.navbar {padding:5px; display:flex;background-color: bisque;align-items:center;}
+.innerHeader {flex-grow:1;}
+.menuLeft, .menuRight {list-style:none;width:100%;padding:10px;}
+.menuLeft {background-color:aliceblue;}
+.menuLeft li {margin-right:15px;}
+.menuRight {text-align:right;background-color:red;}
+.menuRight li {margin-left:15px;}
+.menuRight input {border-radius:4px;padding:1px 3px;border:1px solid transparent;}
+#searchBtn {background-color:#008CBA;padding:2px 8px;border-radius:2px 8px;border:2px solid #008CBA;transition: background-color 0.5s, color 0.5s, border 0.5s;}
+#searchBtn:hover {cursor:pointer;color:#008CBA;background-color: white;border:2px solid #008CBA;}
+.menuLeft li, .menuRight li {display:inline;}
+
+
+
+
+
+#bannerBlock {background-color:rgb(110, 110, 193);height:90vh;}
+#bannerBlock h3 {padding:20px 0;}
+.formElement {margin-bottom:20px;}
+.formElement:first-child {margin-top:20px;}
+#authorName,#bookName {width:400px;border-radius:4px;border:1px solid transparent;padding:2px 4px;}
+.infoHead {display:inline-block;width:200px;}
+
+#addBtn {background-color:#008CBA;padding:2px 8px;border-radius:2px 8px;border:2px solid #008CBA;transition: background-color 0.5s, color 0.5s, border 0.5s;}
+#addBtn:hover {cursor:pointer;color:#008CBA;background-color: white;border:2px solid #008CBA;}
+
+#bannerBlock table{width:100%;border:1px solid black;border-collapse:collapse;}
+#bannerBlock table tr:nth-child(even){background-color:#dedede;}
+#bannerBlock table th{border:1px solid black;}
+#bannerBlock table td{border:1px solid black;text-align:center;width:33%;}
+
+.headRow {display:flex;flex-direction:row;justify-content:center;}
+.heading {flex-grow:1;border:1px solid black;text-align:center;}
+#emptyDisplay {display:none;text-align:center;margin-top:10px;} 
+
+#footerBlock {background-color:rgb(106, 225, 225);text-align:center;padding:10px;}
+#footerBlock div {background-color:rgb(106, 225, 146);}
+
