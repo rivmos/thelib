@@ -1,57 +1,38 @@
 showBooks();
+
 let addBtn = document.getElementById('addBtn');
 addBtn.addEventListener('click',addBook)
+
+
 function addBook(e){
     let bookName = document.getElementById('bookName');
     let authorName = document.getElementById('authorName');
+    let radioAnswer = document.querySelector("input[name='bookCatagory']:checked");
+    radioAnswerValue = radioAnswer.value;
+    let eachBook = {};
+
     if(localStorage.allBooksData){
         allBooksArray =JSON.parse(localStorage.allBooksData);
-        let eachBook = {};
         eachBook['bookName'] = bookName.value;
         eachBook['authorName'] = authorName.value;
-        let radioAnswer;
-        if(document.getElementById('fiction').checked){
-            radioAnswer = document.getElementById('fiction').value;
-        }
-        else if(document.getElementById('non-fiction').checked){
-            radioAnswer = document.getElementById('non-fiction').value;
-        }
-        else if(document.getElementById('tech').checked){
-            radioAnswer = document.getElementById('tech').value;
-        }
-        else{
-            radioAnswer = 'NA';
-        }
-        eachBook['bookType'] = radioAnswer;
+        eachBook['bookType'] = radioAnswerValue;
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
     else{
         let allBooksArray = [];
-        let eachBook = {};
         eachBook['bookName'] = bookName.value;
         eachBook['authorName'] = authorName.value;
-        let radioAnswer;
-        if(document.getElementById('fiction').checked){
-            radioAnswer = document.getElementById('fiction').value;
-        }
-        else if(document.getElementById('non-fiction').checked){
-            radioAnswer = document.getElementById('non-fiction').value;
-        }
-        else if(document.getElementById('tech').checked){
-            radioAnswer = document.getElementById('tech').value;
-        }
-        else{
-            radioAnswer = 'NA';
-        }
-        eachBook['bookType'] = radioAnswer;
+        eachBook['bookType'] = radioAnswerValue;
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
     bookName.value = ''; 
     authorName.value = '';
+    radioAnswer.checked = false;
     showBooks();
 }
+
 
 function showBooks(){
     let displayTable = document.getElementById('displayTable');
