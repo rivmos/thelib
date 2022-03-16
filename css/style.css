@@ -6,28 +6,34 @@
     text-decoration:none;
 }
 
+/*----------Container----------*/
 .container {width:1170px;margin:0 auto;}
+
+
+/*----------headerBlock----------*/
 #headerBlock {background-color:rgb(226, 133, 133);}
 .navbar {padding:5px; display:flex;background-color: bisque;align-items:center;}
 .innerHeader {flex-grow:1;}
+
 .menuLeft, .menuRight {list-style:none;width:100%;padding:10px;}
+.menuLeft li, .menuRight li {display:inline;}
 .menuLeft {background-color:aliceblue;}
 .menuLeft li {margin-right:15px;}
 .menuRight {text-align:right;background-color:red;}
 .menuRight li {margin-left:15px;}
 .menuRight input {border-radius:4px;padding:1px 3px;border:1px solid transparent;}
+
 #searchBtn {background-color:#008CBA;padding:2px 8px;border-radius:2px 8px;border:2px solid #008CBA;transition: background-color 0.5s, color 0.5s, border 0.5s;}
 #searchBtn:hover {cursor:pointer;color:#008CBA;background-color: white;border:2px solid #008CBA;}
-.menuLeft li, .menuRight li {display:inline;}
 
 
-
-
-
+/*----------bannerBlock----------*/
 #bannerBlock {background-color:rgb(110, 110, 193);height:90vh;}
 #bannerBlock h3 {padding:20px 0;}
+
 .formElement {margin-bottom:20px;}
 .formElement:first-child {margin-top:20px;}
+
 #authorName,#bookName {width:400px;border-radius:4px;border:1px solid transparent;padding:2px 4px;}
 .infoHead {display:inline-block;width:200px;}
 
@@ -43,6 +49,8 @@
 .heading {flex-grow:1;border:1px solid black;text-align:center;}
 #emptyDisplay {display:none;text-align:center;margin-top:10px;} 
 
+
+/*----------footerBlock----------*/
 #footerBlock {background-color:rgb(106, 225, 225);text-align:center;padding:10px;}
 #footerBlock div {background-color:rgb(106, 225, 146);}
 
