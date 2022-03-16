@@ -10,20 +10,17 @@ function addBook(e){
     let radioAnswer = document.querySelector("input[name='bookCatagory']:checked");
     radioAnswerValue = radioAnswer.value;
     let eachBook = {};
+    eachBook['bookName'] = bookName.value;
+    eachBook['authorName'] = authorName.value;
+    eachBook['bookType'] = radioAnswerValue;
 
     if(localStorage.allBooksData){
         allBooksArray =JSON.parse(localStorage.allBooksData);
-        eachBook['bookName'] = bookName.value;
-        eachBook['authorName'] = authorName.value;
-        eachBook['bookType'] = radioAnswerValue;
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
     else{
-        let allBooksArray = [];
-        eachBook['bookName'] = bookName.value;
-        eachBook['authorName'] = authorName.value;
-        eachBook['bookType'] = radioAnswerValue;
+        let allBooksArray = [];     
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
