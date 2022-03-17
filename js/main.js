@@ -48,6 +48,7 @@ Display.prototype.error = function(){
     elem.style.opacity = '1';
     setTimeout(function(){
         elem.style.visibility = 'hidden';
+        elem.style.backgroundColor = 'rgb(65, 182, 65)';
     },1000)
     console.log(elem);
 }
