@@ -1,21 +1,24 @@
-showBooks();
+showBooks(); //executes the showBooks func. before anything
 
-let addBtn = document.getElementById('addBtn');
-addBtn.addEventListener('click',addBook)
+// class to create a book object
+class theLib{
+    constructor(bookName,authorName,radioAnswerValue){
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.radioAnswer = radioAnswerValue;
+    }
+}
 
+// Display construction function
+function Display(){
 
-function addBook(e){
-    let bookName = document.getElementById('bookName');
-    let authorName = document.getElementById('authorName');
-    let radioAnswer = document.querySelector("input[name='bookCatagory']:checked");
-    radioAnswerValue = radioAnswer.value;
-    let eachBook = {};
-    eachBook['bookName'] = bookName.value;
-    eachBook['authorName'] = authorName.value;
-    eachBook['bookType'] = radioAnswerValue;
+}
+
+// function to add books to localStorage
+Display.prototype.addToLocal = function(eachBook){
 
     if(localStorage.allBooksData){
-        allBooksArray =JSON.parse(localStorage.allBooksData);
+        allBooksArray = JSON.parse(localStorage.allBooksData);
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
@@ -24,13 +27,72 @@ function addBook(e){
         allBooksArray.push(eachBook);
         localStorage.setItem('allBooksData',JSON.stringify(allBooksArray))
     }
+}
+
+// validating the entries in the field -  required more that 3 characters
+Display.prototype.validate = function(eachBook){
+    if(eachBook.bookName.length>3 && eachBook.authorName.length>3 && eachBook.radioAnswer!==undefined){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// if the validate function returns false this gets executed with error message
+Display.prototype.error = function(){
+    let elem = document.getElementById('addSuccess');
+    elem.innerText = `Enter Name With More Than 3 Characters`;
+    elem.style.backgroundColor = '#b64141';
+    elem.style.visibility = 'visible';
+    elem.style.opacity = '1';
+    setTimeout(function(){
+        elem.style.visibility = 'hidden';
+    },1000)
+    console.log(elem);
+}
+
+// to display a custom success message for each book added
+Display.prototype.success = function(eachBook){
+    let elem = document.getElementById('addSuccess');
+    elem.innerText = `${eachBook.bookName} Added!`;
+    elem.style.visibility = 'visible';
+    elem.style.opacity = '1';
+    setTimeout(function(){
+        elem.style.visibility = 'hidden';
+    },1000)
+    console.log(elem);
+}
+
+// grabbing the add button for click event
+let addBtn = document.getElementById('addBtn');
+addBtn.addEventListener('click',addBook);
+
+// instantiates theLib class
+function addBook(){
+    let bookName = document.getElementById('bookName');
+    let authorName = document.getElementById('authorName');
+    let radioAnswer = document.querySelector("input[name='bookCatagory']:checked");
+    let eachBook = new theLib(bookName.value,authorName.value,radioAnswer.value);
+
+    let display = new Display();
+    if(display.validate(eachBook)){
+        display.addToLocal(eachBook);
+        display.success(eachBook);
+    }
+    else{
+        display.error()
+    }
+
     bookName.value = ''; 
     authorName.value = '';
     radioAnswer.checked = false;
+
     showBooks();
 }
 
 
+// func. that gets executed when the page loads or when addBtn is clicked
 function showBooks(){
     let displayTable = document.getElementById('displayTable');
     let emptyDisplay = document.getElementById('emptyDisplay');
@@ -50,7 +112,7 @@ function showBooks(){
                     <tr>
                     <td>${element['bookName']}</td>
                     <td>${element['authorName']}</td>
-                    <td>${element['bookType']}</td>
+                    <td>${element['radioAnswer']}</td>
                     </tr>
             `;
         });
