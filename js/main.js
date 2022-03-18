@@ -44,6 +44,7 @@ class Display{
 
         Array.from(field).forEach(function(element){
             element.style.border = '1px solid rgb(250, 126, 126)';
+            // element.style.boxShadow = '0 0 10px rgb(250, 126, 126)';
         })
 
         elem.innerText = `Enter A Name With More Than 3 Characters`;
@@ -56,7 +57,8 @@ class Display{
             elem.style.backgroundColor = 'rgb(94, 187, 94)';
             elem.style.color = 'rgb(0, 70, 0)';
             Array.from(field).forEach(function(element){
-                element.style.border = '1px solid transparent';
+                element.style.border = '1px solid black';
+                // element.style.boxShadow = '0 0 0';
             })
             
         },1000)
