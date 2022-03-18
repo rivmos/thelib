@@ -33,11 +33,11 @@
         <div id="form">
             <div class="formElement">
                 <label class="infoHead">Book Name</label>
-                <input id="bookName" type="text" placeholder="Enter Book">
+                <input class="field" id="bookName" type="text" placeholder="Enter Book">
             </div>
             <div class="formElement">
                 <label class="infoHead">Author</label>
-                <input id="authorName" type="text" placeholder="Enter Author">
+                <input class="field" id="authorName" type="text" placeholder="Enter Author">
             </div>
 
             <div class="formElement">   
@@ -57,13 +57,18 @@
         </div>
         <div>
             <h3>Your Books :</h3>
-            <table id="displayTable">
-                <tr>
-                    <th>Book</th>
-                    <th>Author</th>
-                    <th>Type</th>
-                </tr>
-            </table>
+            <div id="tableDiv">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book</th>
+                            <th>Author</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayTable"></tbody>
+                </table>
+            </div>
             <p id="emptyDisplay">Nothing To Show Here! Add A Book First</p>
         </div>
     </div>

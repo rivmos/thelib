@@ -40,7 +40,8 @@
 #addBtn {background-color:#008CBA;padding:2px 8px;border-radius:2px 8px;border:2px solid #008CBA;transition: background-color 0.5s, color 0.5s, border 0.5s;}
 #addBtn:hover {cursor:pointer;color:#008CBA;background-color: white;border:2px solid #008CBA;}
 
-#bannerBlock table{width:100%;border:1px solid black;border-collapse:collapse;}
+#bannerBlock #tableDiv {height:250px;overflow-y:auto;}
+#bannerBlock table{border:1px solid black;border-collapse:collapse;width: 1170px;;}
 #bannerBlock table tr:nth-child(even){background-color:#dedede;}
 #bannerBlock table th{border:1px solid black;}
 #bannerBlock table td{border:1px solid black;text-align:center;width:33%;}
@@ -51,7 +52,7 @@
 
 
 /*----------footerBlock----------*/
-#footerBlock {background-color:rgb(106, 225, 225);text-align:center;padding:10px;}
+#footerBlock {background-color:rgb(106, 225, 225);text-align:center;padding:12px;}
 #footerBlock div {background-color:rgb(106, 225, 146);}
 
-#addSuccess {visibility:hidden; color:black;background-color:rgb(65, 182, 65);padding:2px 8px;border-radius:6px;margin-left:10px;opacity:0;transition:opacity 0.3s ease-in-out;}
+#addSuccess {visibility:hidden; color:rgb(0, 70, 0);background-color:rgb(94, 187, 94);padding:2px 8px;border-radius:6px;margin-left:10px;opacity:0;transition:opacity 0.3s ease-in-out;}
